@@ -3,9 +3,7 @@ import play.api.libs.json._
 
 object crawler {
   def main(args: Array[String]): Unit = {
-
-
+    println("Hi!")
   }
-
 }
 
