@@ -1,6 +1,6 @@
 package netapi.weibo.API
 
-import netapi.weibo.SinaAPIs
+
 import us.codecraft.webmagic.processor.PageProcessor
 import us.codecraft.webmagic.{Page, Site, Spider}
 
@@ -36,7 +36,7 @@ object SinaAPICrawler {
     val start = SinaAPIs.userinfo + "1439317162"
     printf(start + "\n")
 
-    Spider.create(new SinaCrawler).addUrl(SinaAPIs.public_timeline).thread(5).run
+    Spider.create(new SinaAPICrawler).addUrl(SinaAPIs.public_timeline).thread(5).run
 
   }
 
