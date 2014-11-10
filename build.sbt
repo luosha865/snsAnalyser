@@ -14,4 +14,4 @@ libraryDependencies += "us.codecraft" % "webmagic-core" % "0.5.2"
 
 libraryDependencies += "us.codecraft" % "webmagic-extension" % "0.5.2"
 
-libraryDependencies += "com.typesafe.play" %% "play-json" % "2.2.1"
+libraryDependencies += "org.apache.logging.log4j" % "log4j-core" % "2.0"
