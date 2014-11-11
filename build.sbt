@@ -19,3 +19,6 @@ libraryDependencies += "us.codecraft" % "webmagic-selenium" % "0.5.2"
 libraryDependencies += "org.apache.logging.log4j" % "log4j-core" % "2.0"
 
 libraryDependencies += "com.typesafe.play" %% "play-json" % "2.2.1"
+
+libraryDependencies += "org.neo4j" % "neo4j-kernel" % "2.1.5"
+

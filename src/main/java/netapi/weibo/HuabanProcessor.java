@@ -39,4 +39,6 @@ public class HuabanProcessor implements PageProcessor {
                 .downloader(new SeleniumDownloader("/Users/tianhaowei/develop/IdeaProjects/snsAnalyser/src/main/resources/chromedriver"))
                 .run();
     }
+
+
 }

@@ -13,9 +13,10 @@ import us.codecraft.webmagic.{Page, Site, Spider}
 import us.codecraft.webmagic.pipeline.FilePipeline
 
 class SinaCrawler  extends PageProcessor{
-  private var site: Site = Site.me.addCookie("Cookie",LoginModel.getCookie).setSleepTime(1000)
-   //Site.me.setRetryTimes(3).setSleepTime(100).addCookie("Cookie",LoginModel.getCookie)
+  private var site: Site = Site.me.setRetryTimes(3).setSleepTime(100).addCookie("Cookie",LoginModel.getCookie)
+   //
   var visited = Set[String]("2007962507")
+
   @Override
   def process(page: Page) {
     //page.putField("html",page.getHtml)
@@ -52,6 +53,7 @@ object SinaCrawler {
 
   def crawling(): Unit ={
     val weibospider = Spider.create(new SinaCrawler)
+      //.addPipeline(new neo4jPipeline)
     //val starturls = seedUserIds.map(x => SinaUser.getfollowUrl(x))
     for (uid <- seedUserIds){
       weibospider.addUrl(SinaUser.getfollowUrl(uid):_*)
@@ -62,6 +64,8 @@ object SinaCrawler {
   }
 
   def main (args: Array[String]): Unit = {
+    print("begin\n")
+    print(LoginModel.getCookie)
     crawling()
   }
 
