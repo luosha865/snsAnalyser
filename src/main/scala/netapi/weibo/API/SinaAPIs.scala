@@ -8,7 +8,7 @@ import scala.xml.XML
 object SinaAPIs {
 
 
-  val _appkey = (XML.load("appkey.xml") \\ "APPKEY").text.toString
+  val _appkey = (XML.load("appkey.xml") \\ "ROOT" \\ "APPKEY").text.toString
 
   val userinfo = "https://api.weibo.com/2/users/show.json?source=" + _appkey +"&uid="
 
